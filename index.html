@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وجهة ظفار | Wijha</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            text-align: right;
+        }
+
+        header {
+            background-color: #0077a1;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #005f7a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-toggle:hover {
+            background-color: #003f55;
+        }
+
+        nav {
+            background-color: #005f7a;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a.active {
+            background-color: #004f66;
+        }
+
+        nav a:hover {
+            background-color: #003f55;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #0077a1;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0077a1;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #005f7a;
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #005f7a;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #0077a1;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="main-title">مرحباً بك في وجهة | Wijha</h1>
+        <button class="language-toggle" onclick="toggleLanguage()">AR</button>
+    </header>
+
+    <nav>
+        <a href="#home" class="active" onclick="showSection('home')">الصفحة الرئيسية</a>
+        <a href="#register" onclick="showSection('register')">تسجيل الدخول</a>
+        <a href="#developer" onclick="showSection('developer')">المطور</a>
+    </nav>
+
+    <!-- الصفحة الرئيسية -->
+    <div id="home" class="container">
+        <h2 id="about-title">من نحن؟</h2>
+        <p id="about-text">
+            منصة وجهة | Wijha هي منصة تقوم بجمع المرشدين السياحيين في محافظة ظفار لتقديم خدماتهم لزوار المحافظة إذ تعمل المنصة كحلقة وصل بين المرشدين السياحيين المحليين من شباب المحافظة وزوار المحافظة في مختلف المواسم وتحديدًا موسم خريف ظفار.
+        </p>
+
+        <h2 id="serve-title">كيف تخدم وجهة | Wijha المحافظة؟</h2>
+        <p id="serve-text">
+            تخدم المنصة المحافظة من خلال تقليل حجم البطالة، حيث أن جميع المنتسبين إليها هم شباب عمانيين من أهل المحافظة باحثين عن عمل وتقوم المنصة أيضًا بتنظيم العمل الإرشادي السياحي في المحافظة.
+        </p>
+        <p>
+            وكذلك، فإن المنصة تعمل على توزيع السياح على المحافظة من خلال خططها التي تقدمها للمستخدمين والباقات السياحية، بدلا عن تركزهم في أماكن معينة مما يسبب في تعطيل حركة السير ويساهم في الإختناق المروري وشلل بعض المناطق السكنية.
+        </p>
+
+        <!-- زر البدء -->
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="#register" class="btn" onclick="showSection('register')">ابدأ</a>
+        </div>
+    </div>
+
+    <!-- قسم التسجيل -->
+    <div id="register" class="container hidden">
+        <h2>تسجيل الدخول</h2>
+        <button class="btn" onclick="showForm('visitorForm')">زائر المحافظة</button>
+        <button class="btn" onclick="showForm('guideForm')">دليل سياحي/مرشد سياحي</button>
+
+        <!-- نموذج زائر المحافظة -->
+        <div id="visitorForm" class="hidden">
+            <h3>تسجيل زائر</h3>
+            <form onsubmit="return submitVisitor(event)">
+                <label>رقم الهاتف:</label>
+                <input type="tel" placeholder="أدخل رقم الهاتف" required>
+
+                <label>الجنسية:</label>
+                <select required>
+                    <option value="">اختر جنسيتك</option>
+                    <option value="عماني">عماني</option>
+                    <option value="إماراتي">إماراتي</option>
+                    <option value="سعودي">سعودي</option>
+                </select>
+
+                <label>وثيقة إثبات الشخصية:</label>
+                <input type="file" accept="image/*,.pdf" required>
+
+                <button class="btn" type="submit">إرسال</button>
+            </form>
+        </div>
+
+        <!-- نموذج دليل سياحي -->
+        <div id="guideForm" class="hidden">
+            <h3>تسجيل دليل سياحي</h3>
+            <form onsubmit="return submitGuide(event)">
+                <label>رقم الهاتف:</label>
+                <input type="tel" placeholder="أدخل رقم الهاتف" required>
+
+                <label>نوع الخدمة:</label>
+                <select required>
+                    <option value="">اختر نوع الخدمة</option>
+                    <option value="مرشد سياحي">مرشد سياحي</option>
+                </select>
+
+                <button class="btn" type="submit">إرسال</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- قسم المطور -->
+    <div id="developer" class="container hidden">
+        <h2>المطور</h2>
+        <form id="devLogin" onsubmit="return loginDev(event)">
+            <label>اسم المطور:</label>
+            <input type="text" id="devName" required>
+
+            <label>كلمة المرور:</label>
+            <input type="password" id="devPass" required>
+
+            <button class="btn" type="submit">دخول</button>
+        </form>
+
+        <div id="devData" class="hidden">
+            <h3>بيانات المسجلين</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>نوع المستخدم</th>
+                        <th>البيانات</th>
+                        <th>النتيجة</th>
+                    </tr>
+                </thead>
+                <tbody id="userData"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p id="footer-text">للدعم الفني: 95517577 | mrstar371@gmail.com</p>
+    </footer>
+
+    <script>
+        const users = [];
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.container').forEach(section => section.classList.add('hidden'));
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        function showForm(formId) {
+            document.querySelectorAll('#register > div').forEach(form => form.classList.add('hidden'));
+            document.getElementById(formId).classList.remove('hidden');
+        }
+
+        function submitVisitor(event) {
+            event.preventDefault();
+            alert('تم تسجيل بياناتك بنجاح ✅. سيتم الرد عليك قريباً.');
+            users.push({ type: 'زائر المحافظة', data: 'بيانات مدخلة' });
+            showSection('home');
+        }
+
+        function submitGuide(event) {
+            event.preventDefault();
+            alert('تم تسجيل بياناتك كدليل سياحي بنجاح. سيتم الرد عليك قريباً.');
+            users.push({ type: 'دليل سياحي', data: 'بيانات مدخلة', result: '---' });
+        }
+
+        function loginDev(event) {
+            event.preventDefault();
+            const name = document.getElementById('devName').value;
+            const pass = document.getElementById('devPass').value;
+
+            if (name === 'ADMIN' && pass === 'Ss909121') {
+                document.getElementById('devLogin').classList.add('hidden');
+                document.getElementById('devData').classList.remove('hidden');
+                populateTable();
+            } else {
+                alert('بيانات المطور غير صحيحة!');
+            }
+        }
+
+        function populateTable() {
+            const tableBody = document.getElementById('userData');
+            tableBody.innerHTML = users
+                .map(user => `<tr><td>${user.type}</td><td>${user.data}</td><td>${user.result || '---'}</td></tr>`)
+                .join('');
+        }
+
+        function toggleLanguage() {
+            const currentLang = document.documentElement.lang;
+            const isArabic = currentLang === 'ar';
+
+            document.documentElement.lang = isArabic ? 'en' : 'ar';
+            document.dir = isArabic ? 'ltr' : 'rtl';
+
+            document.getElementById('main-title').innerText = isArabic
+                ? 'Welcome to Wijha!'
+                : 'مرحباً بك في وجهة | Wijha';
+
+            document.getElementById('about-title').innerText = isArabic
+                ? 'About Us'
+                : 'من نحن؟';
+
+            document.getElementById('about-text').innerText = isArabic
+                ? 'Wijha is a platform that connects local tour guides in Dhofar with visitors during various seasons, especially Khareef Dhofar.'
+                : 'منصة وجهة | Wijha هي منصة تقوم بجمع المرشدين السياحيين في محافظة ظفار لتقديم خدماتهم لزوار المحافظة إذ تعمل المنصة كحلقة وصل بين المرشدين السياحيين المحليين من شباب المحافظة وزوار المحافظة في مختلف المواسم وتحديدًا موسم خريف ظفار.';
+
+            document.getElementById('serve-title').innerText = isArabic
+                ? 'How Wijha Serves Dhofar?'
+                : 'كيف تخدم وجهة | Wijha المحافظة؟';
+
+            document.getElementById('serve-text').innerText = isArabic
+                ? 'The platform reduces unemployment by involving local Omani youth and organizes tourism services to evenly distribute visitors across Dhofar.'
+                : 'تخدم المنصة المحافظة من خلال تقليل حجم البطالة، حيث أن جميع المنتسبين إليها هم شباب عمانيين من أهل المحافظة باحثين عن عمل وتقوم المنصة أيضًا بتنظيم العمل الإرشادي السياحي في المحافظة. وكذلك، فإن المنصة تعمل على توزيع السياح على المحافظة من خلال خططها التي تقدمها للمستخدمين والباقات السياحية، بدلا عن تركزهم في أماكن معينة مما يسبب في تعطيل حركة السير ويساهم في الإختناق المروري وشلل بعض المناطق السكنية.';
+
+            document.querySelectorAll('nav a').forEach((link, i) => {
+                link.innerText = isArabic
+                    ? ['Home', 'Login', 'Developer'][i]
+                    : ['الصفحة الرئيسية', 'تسجيل الدخول', 'المطور'][i];
+            });
+
+            document.getElementById('footer-text').innerText = isArabic
+                ? 'Support: 95517577 | mrstar371@gmail.com'
+                : 'للدعم الفني: 95517577 | mrstar371@gmail.com';
+        }
+    </script>
+</body>
+</html>
